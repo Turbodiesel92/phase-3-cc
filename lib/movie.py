@@ -3,6 +3,9 @@ class Movie:
     def __init__(self, title):
         self.title = title
 
+        self.reviews = []
+        self.reviewers = []
+
     def get_title(self):
         return self._title
 
@@ -16,22 +19,25 @@ class Movie:
 
     title = property(get_title, set_title)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     def average_rating(self):
-        pass
+        total = 0
+
+        for rating in self.reviews:
+            total += rating
+
+        average = total / len(self.reviews)
+
+        return average
+
+
+
+
+
+
+
+
+
 
     @classmethod
     def highest_rated(cls):
-        pass
+        return cls.reviews.limit
