@@ -1,6 +1,6 @@
 import pytest
 
-from movie import Movie
+from lib.movie import Movie
 
 class TestMovie:
     '''Movie in movie.py'''
@@ -16,7 +16,7 @@ class TestMovie:
             Movie(title=1)
         with pytest.raises(Exception):
             Movie(title="")
-    
+
     def test_has_reviews(self):
         '''contains an instance attribute, reviews, a list of its reviews.'''
         movie = Movie(title="Scarface")
