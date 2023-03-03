@@ -44,6 +44,8 @@ class Review:
         if type(rating) == int and (rating > 0 and rating < 6):
             self._rating = rating
         else:
+            print("Ratings must be integers between 1 and 5.")
+
             raise Exception("Ratings must be integers between 1 and 5.")
 
 
